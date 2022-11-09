@@ -166,6 +166,113 @@ a{
 	background: #fff;
 }
 
+#demo{
+font-size: 30px;    
+  }
+
+@media only screen and (max-device-width: 480px) {
+  
+  img{
+    width: 500px;
+    height: 400px;
+    position: relative;
+    top: 15px;
+    margin-left: -60px;
+   
+}
+#logo{
+  font-size: 90px;
+  
+  margin-left: -100px;
+}
+  .cons{
+    font-size: 40px;
+    padding-top: 40px;
+    color: #3e8e5c;
+	width: 800px;
+	height: 120px;
+	transform: skew(20deg);
+	background: #fff;
+
+  }
+
+ 
+
+  .middle h1{
+    font-size: 80px;
+  }
+  #demo{
+font-size: 60px;    
+  }
+  hr {
+  margin: auto;
+  width: 90%;
+}
+
+.wrapper{
+  padding-bottom: 160px;
+}
+
+.wrapper .button{
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin: 0 5px;
+  overflow: hidden;
+  font-size: 50px;
+  border-radius: 80px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover{
+  width: 400px;
+  color: white;
+  background-color: #3cb46a;
+  
+  box-shadow: 0px 10px 10px rgba(255, 255, 255, 0.1);
+}
+.wrapper .button .icon{
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  border-radius: 80px;
+  box-sizing: border-box;
+  line-height: 100px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1):hover .icon{
+  background: #4267B2;
+}
+.wrapper .button:nth-child(2):hover .icon{
+  background: #1DA1F2;
+}
+.wrapper .button:nth-child(3):hover .icon{
+  background: #E1306C;
+}
+.wrapper .button:nth-child(4):hover .icon{
+  background: #333;
+}
+.wrapper .button:nth-child(5):hover .icon{
+  background: #ff0000;
+}
+.wrapper .button .icon i{
+  font-size: 60px;
+  line-height: 100px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.wrapper .button span{
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 25px;
+  margin-left: 5px;
+  transition: all 0.3s ease-out;
+}
+}
 
 </style>
 <body>
@@ -179,7 +286,7 @@ a{
     <p class="cons">Under Construction</p>
     <h1>COMING SOON</h1>
     <hr>
-    <p id="demo" style="font-size:30px"></p>
+    <p id="demo"></p>
   </div>
   <div class="wrapper">
     <div class="button">
