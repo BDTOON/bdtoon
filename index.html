@@ -57,6 +57,10 @@ background: linear-gradient(34deg, rgba(66,125,85,1) 0%, rgba(60,140,94,1) 38%, 
   top: 30px;
   left: 0;
   display: flex;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 
 }
 
@@ -64,6 +68,9 @@ background: linear-gradient(34deg, rgba(66,125,85,1) 0%, rgba(60,140,94,1) 38%, 
   position: absolute;
   bottom: 50px;
   left: 15px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .middle {
@@ -72,6 +79,9 @@ background: linear-gradient(34deg, rgba(66,125,85,1) 0%, rgba(60,140,94,1) 38%, 
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 hr {
@@ -88,6 +98,12 @@ img{
     height: 80px;
     position: relative;
     top: 15px;
+    user-drag: none;  
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-drag: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
 }
 
 .wrapper .button{
