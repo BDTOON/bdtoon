@@ -38,6 +38,7 @@ body, html {
   height: 100%;
   margin: 0;
   filter: invert(100%);
+  overflow: hidden;
 }
 
 .bgimg {
@@ -66,7 +67,7 @@ background: linear-gradient(34deg, rgba(66,125,85,1) 0%, rgba(60,140,94,1) 38%, 
 .wrapper {
   position: absolute;
   bottom: 50px;
-  left: 15px;
+  left: 30px;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -91,7 +92,23 @@ hr {
     font-family: "Bdtoon", "Courier New";
     text-transform: uppercase;
     font-size: 30px;
+    transition: all 0.5s ease-in-out;
 }
+#logo span{
+  transition: all 0.2s ease-in-out;
+}
+
+#logo span:hover{
+  font-size: 31px;
+  color: #4ece7f;
+  margin-top: -120px;
+}
+
+img:hover{
+    width: 125px;
+    height: 85px;
+}
+
 img{
     width: 120px;
     height: 80px;
@@ -103,88 +120,111 @@ img{
    -webkit-user-drag: none;
    -webkit-user-select: none;
    -ms-user-select: none;
+   transition: all 0.7s ease-in-out;
 }
 
-.wrapper .button{
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  float: left;
-  margin: 0 5px;
-  overflow: hidden;
-  
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
+.wrapper{
+  display: inline-flex;
 }
-.wrapper .button:hover{
-  width: 200px;
-  color: white;
-  background-color: #3cb46a;
-  
-  box-shadow: 0px 10px 10px rgba(255, 255, 255, 0.1);
-}
-.wrapper .button .icon{
-  display: inline-block;
-  height: 60px;
-  width: 60px;
+.wrapper .icon{
+  margin: 0 20px;
   text-align: center;
-  border-radius: 50px;
-  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon span{
+  display: block;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon span i{
   line-height: 60px;
-  transition: all 0.3s ease-out;
-}
-.wrapper .button:nth-child(1):hover .icon{
-  background: #4267B2;
-}
-.wrapper .button:nth-child(2):hover .icon{
-  background: #1DA1F2;
-}
-.wrapper .button:nth-child(3):hover .icon{
-  background: #E1306C;
-}
-.wrapper .button:nth-child(4):hover .icon{
-  background: #333;
-}
-.wrapper .button:nth-child(5):hover .icon{
-  background: #ff0000;
-}
-.wrapper .button .icon i{
   font-size: 25px;
-  line-height: 60px;
-  transition: all 0.3s ease-out;
 }
-.wrapper .button:hover .icon i{
+.wrapper .icon .tooltip{
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: #fff;
   color: #fff;
-}
-.wrapper .button span{
+  padding: 10px 18px;
   font-size: 20px;
   font-weight: 500;
-  line-height: 60px;
-  margin-left: 10px;
-  transition: all 0.3s ease-out;
+  border-radius: 25px;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-/*
-.wrapper .button span{
-  color: white;
-}*/
-
-.wrapper .button:nth-child(1) span{
-  color: white;
+.wrapper .icon:hover .tooltip{
+  top: -70px;
+  opacity: 1;
+  pointer-events: auto;
 }
-.wrapper .button:nth-child(2) span{
-  color: white;
+.icon .tooltip:before{
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.wrapper .button:nth-child(3) span{
-  color: white;
+.wrapper .icon:hover span{
+  color: #fff;
 }
-.wrapper .button:nth-child(4) span{
-  color: white;
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip{
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
 }
-.wrapper .button:nth-child(5) span{
-  color: white;
+.wrapper .facebook:hover span,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip:before{
+  background: #3B5999;
 }
-
+.wrapper .twitter:hover span,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip:before{
+  background: #46C1F6;
+}
+.wrapper .instagram:hover span,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip:before{
+  background: #e1306c;
+}
+.wrapper .github:hover span,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip:before{
+  background: #333;
+}
+.wrapper .pinterest:hover span,
+.wrapper .pinterest:hover .tooltip,
+.wrapper .pinterest:hover .tooltip:before{
+  background:  #c8232c;
+}
+.wrapper .reddit:hover span,
+.wrapper .reddit:hover .tooltip,
+.wrapper .reddit:hover .tooltip:before{
+  background: #FF4500;
+}
+.wrapper .youtube:hover span,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip:before{
+  background: #DE463B;
+}
 a{
     text-decoration: none;
     color: white;
@@ -209,106 +249,83 @@ font-size: 30px;
 
 @media only screen and (max-device-width: 480px) {
   
+  .topleft{
+    top: 30px;
+  }
   img{
-    width: 500px;
-    height: 400px;
+    width: 150px;
+    height: 100px;
     position: relative;
     top: 15px;
-    margin-left: -60px;
    
 }
 #logo{
-  font-size: 90px;
-  
-  margin-left: -100px;
+  font-size: 30px;
+  padding-left: 0px;
+  margin-left: 0px;
 }
   .cons{
-    font-size: 40px;
-    padding-top: 40px;
-    color: #3e8e5c;
-	width: 800px;
-	height: 120px;
-	transform: skew(20deg);
-	background: #fff;
+    font-size: 15px;
+    line-height: 40px;
+	width: 300px;
+	height: 50px;
+	transform: skew(-5deg);
 
   }
 
  
 
   .middle h1{
-    font-size: 80px;
+    font-size: 30px;
   }
   #demo{
-font-size: 60px;    
+font-size: 25px;    
   }
   hr {
   margin: auto;
   width: 90%;
 }
-
 .wrapper{
-  padding-bottom: 160px;
+  left: 5px;
+}
+.wrapper .icon{
+  margin: 0 5px;
+}
+.wrapper .icon span{
+  display: block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  margin-left: 10px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon span i{
+  line-height: 30px;
+  font-size: 20px;
+}
+.wrapper .facebook .tooltip{
+  margin-left: 80px;
+}
+.wrapper .facebook:hover .tooltip{
+  top: -70px;
+}
+.facebook .tooltip:before{
+  left: 23%;
 }
 
-.wrapper .button{
-  display: inline-block;
-  height: 100px;
-  width: 100px;
-  float: left;
-  margin: 0 5px;
-  overflow: hidden;
-  font-size: 50px;
-  border-radius: 80px;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
+.wrapper .reddit .tooltip{
+  margin-right: 10px;
 }
-.wrapper .button:hover{
-  width: 400px;
-  color: white;
-  background-color: #3cb46a;
-  
-  box-shadow: 0px 10px 10px rgba(255, 255, 255, 0.1);
+.wrapper .reddit:hover .tooltip{
+  top: -70px;
 }
-.wrapper .button .icon{
-  display: inline-block;
-  height: 100px;
-  width: 100px;
-  text-align: center;
-  border-radius: 80px;
-  box-sizing: border-box;
-  line-height: 100px;
-  transition: all 0.3s ease-out;
+.reddit .tooltip:before{
+left: 60%;
 }
-.wrapper .button:nth-child(1):hover .icon{
-  background: #4267B2;
-}
-.wrapper .button:nth-child(2):hover .icon{
-  background: #1DA1F2;
-}
-.wrapper .button:nth-child(3):hover .icon{
-  background: #E1306C;
-}
-.wrapper .button:nth-child(4):hover .icon{
-  background: #333;
-}
-.wrapper .button:nth-child(5):hover .icon{
-  background: #ff0000;
-}
-.wrapper .button .icon i{
-  font-size: 60px;
-  line-height: 100px;
-  transition: all 0.3s ease-out;
-}
-.wrapper .button:hover .icon i{
-  color: #fff;
-}
-.wrapper .button span{
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 25px;
-  margin-left: 5px;
-  transition: all 0.3s ease-out;
-}
+
 }
 
 </style>
@@ -317,7 +334,7 @@ font-size: 60px;
 <div class="bgimg">
   <div class="topleft">
     <img id="logo-img" src="images/logo-white.png" alt="bdtoon">
-    <p id="logo">Bdtoon</p>
+    <p id="logo"><span>b</span><span>d</span><span>t</span><span>o</span><span>o</span><span>n</span></p>
   
   </div>
   <div class="middle">
@@ -327,39 +344,51 @@ font-size: 60px;
     <p id="demo"></p>
   </div>
   <div class="wrapper">
-    <div class="button">
-        <div class="icon">
-            <a target="_blank" href="https://www.facebook.com/bdtoonofficial"><i class="fab fa-facebook-f"></i>
-        </div>
-        <span>Facebook</a></span>
-     </div>
-     <div class="button">
-        <a target="_blank" href="https://www.twitter.com/bdtoonofficial"><div class="icon">
-           <i class="fab fa-twitter"></i>
-        </div>
-        <span>Twitter</span></a>
-     </div>
-     <div class="button">
-        <div class="icon">
-            <a target="_blank" href="https://www.instagram.com/bdtoonofficial">
-           <i class="fab fa-instagram"></i>
-        </div>
-        <span>Instagram</span></a>
-     </div>
-     <div class="button">
-        <div class="icon">
-            <a target="_blank" href="https://www.tiktok.com/@bdtoonofficial">
-           <i class="fab fa-tiktok"></i>
-        </div>
-        <span>TikTok</span></a>
-     </div>
-     <div class="button">
-        <div class="icon"><a target="_blank" href="https://www.youtube.com/@bdtoonofficial">
-           <i class="fab fa-youtube"></i>
-        </div>
-        <span>YouTube</span></a>
-     </div>
-  </div>
+    <div class="icon facebook">
+      <div class="tooltip">
+          Facebook
+       </div>
+       <a href="https://www.facebook.com/bdtoonofficial" target="_blank">
+        <span><i class="fab fa-facebook-f"></i></a></span>
+    </div>
+    <div class="icon twitter">
+       <div class="tooltip">
+          Twitter
+       </div>
+       <a href="https://www.twitter.com/bdtoonofficial" target="_blank"><span><i class="fab fa-twitter"></i></a></span>
+    </div>
+    <div class="icon instagram">
+       <div class="tooltip">
+          Instagram
+       </div>
+       <a href="https://www.instagram.com/bdtoonofficial" target="_blank"><span><i class="fab fa-instagram"></i></a></span>
+    </div>
+    <div class="icon github">
+       <div class="tooltip">
+          TikTok
+       </div>
+       <a href="https://www.tiktok.com/@bdtoonofficial" target="_blank"><span><i class="fab fa-tiktok"></i></a></span>
+    </div>
+    <div class="icon youtube">
+       <div class="tooltip">
+          YouTube
+       </div>
+       <a href="https://www.youtube.com/@bdtoonofficial" target="_blank"><span><i class="fab fa-youtube"></i></a></span>
+    </div>
+    <div class="icon pinterest">
+      <div class="tooltip">
+         Pinterest
+      </div>
+      <a href="https://www.pinterest.com/bdtoonofficial" target="_blank"><span><i class="fab fa-pinterest"></i></a></span>
+   </div>
+   <div class="icon reddit">
+    <div class="tooltip">
+       Reddit
+    </div>
+    <a href="https://www.reddit.com/u/bdtoonofficial" target="_blank"><span><i class="fab fa-reddit"></i></a></span>
+ </div>
+ 
+ </div>
 </div>
 
 <script>
